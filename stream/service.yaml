@@ -1,0 +1,6 @@
+name: tweeter
+namespace: datawire
+
+branches:
+  master: stable
+  dev/*: default

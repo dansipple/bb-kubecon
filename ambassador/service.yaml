@@ -1,0 +1,4 @@
+name: ambassador
+namespace: datawire
+
+ambassador_version: 0.31.0

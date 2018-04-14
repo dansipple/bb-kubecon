@@ -1,0 +1,246 @@
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    background: #F5F7FA;
+    font-weight: 400;
+    min-width: 1100px;
+    padding: 68px 0 0;
+}
+
+button, input {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+    color: #62c2d7;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.welcome {
+    margin: 35px 0;
+}
+
+.welcome-text {
+    text-align: left;
+}
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+.float-right {
+    float: right;
+}
+
+.container {
+    max-width: 1040px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.link-button{
+    color: #4A4A4A;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+.link-button:hover {
+    text-decoration: underline;
+}
+
+.blue-button {
+    background: #62c2d7;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+    display: inline-block;
+    padding: 13px 40px;
+    min-width: 250px;
+    border-radius: 3px;
+    text-align: center;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.blue-button.small {
+    padding: 10px 30px;
+    font-weight: 500;
+    min-width: 0;
+    text-transform: none;
+}
+
+.blue-button:hover {
+    opacity: 0.9;
+    color: white;
+    text-decoration: none;
+}
+
+.module {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    background: #fff;
+    margin: 0 0 50px;
+    padding: 25px 50px 50px;
+}
+
+.module-header {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 35px;
+    align-items: center;
+}
+
+.module-header .env {
+    font-size: 14px;
+    font-weight: bold;
+    color: #62C2D7;
+    padding: 3px 10px;
+    margin: 0 2px;
+}
+
+.module-header .env.active {
+    background: #F9634E;
+    color: #fff;
+    border-radius: 2px;
+}
+
+.module-header h1 {
+    font-size: 28px;
+    color: #222222;
+    letter-spacing: -1.17px;
+    line-height: 58px;
+    margin: 0 25px 0 0;
+}
+
+.label {
+    text-align: left;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #222222;
+    font-size: 20px;
+    margin: 0 0 25px;
+}
+
+.blackbird-header {
+    background: #EAEDF1;
+    margin-bottom: 60px;
+}
+
+.blackbird-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+}
+
+.blackbird-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #222222;
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: -1.17px;
+}
+.blackbird-logo > img {
+    height: 83px;
+    width: 83px;
+    display: block;
+    margin-right: 10px;
+}
+
+.joyride-tooltip {
+    color: #4A4A4A;
+}
+
+.joyride-tooltip__button--primary {
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    background: #62c2d7;
+    color: #fff;
+}
+
+.joyride-tooltip__button--primary:active, .joyride-tooltip__button--primary:focus, .joyride-tooltip__button--primary:hover {
+    background: #62c2d7;
+    opacity: 0.9;
+}
+
+.joyride-tooltip__button--secondary {
+    color: #4A4A4A;
+}
+
+.joyride-tooltip__header ~ .joyride-tooltip__main {
+    color: #4A4A4A;
+    font-size: 18px;
+    padding: 20px 0 25px;
+    line-height: 25px;
+}
+
+.joyride-tooltip__header {
+    border-bottom: 1px solid #DCDCDC;
+    color: #222222;
+    font-size: 28px;
+    line-height: 35px;
+    font-weight: 600;
+    padding-bottom: 15px;
+}
+
+.joyride-beacon__outer {
+    border-color: #F9634E;
+}
+
+.joyride-beacon__inner {
+    background: #F9634E;
+}
+
+.joyride-tooltip__close--header {
+    height: 17px;
+    width: 17px;
+}
+
+.joyride-hole {
+    box-shadow: 0 0 0 9999px rgba(66, 66, 66, 0.3), 0 0 15px rgba(66, 66, 66, 0.3);
+}
+
+.joyride-tooltip {
+    filter: drop-shadow(-1px -2px 3px rgba(0, 0, 0, 0.1)) drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.1))
+}
+
+.ui.dimmer {
+   background: rgba(66, 66, 66, 0.3);
+}
+
+.ui.tiny.modal {
+    padding: 0 20px;
+}
+
+.ui.modal>.header:not(.ui) {
+    color: #222222;
+    font-size: 28px;
+    line-height: 35px;
+    font-weight: 600;
+    padding: 20px 0 15px;
+}
+
+.ui.modal>.content {
+    color: #4A4A4A;
+    font-size: 18px;
+    padding: 25px 0 30px;
+    line-height: 25px;
+}
+
+.ui.modal>.actions {
+    border: none;
+    background: transparent;
+    padding-bottom: 20px;
+}

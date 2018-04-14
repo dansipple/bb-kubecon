@@ -1,0 +1,89 @@
+.tutorials {
+    border-radius: 3px;
+    margin: 0 0 65px;
+    padding: 0 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    background: #fff;
+}
+
+.tutorial-header {
+    border-bottom: 1px solid #DCDCDC;
+    margin-bottom: 15px;
+    padding: 50px 35px;
+}
+
+.tutorials h2 {
+    color: #222222;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.78px;
+    line-height: 36px;
+}
+
+.tutorial-header p {
+    font-size: 20px;
+    color: #4A4A4A;
+    line-height: 28px;
+}
+
+.tutorial-content {
+    display: flex;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #DCDCDC;
+    align-items: flex-start;
+}
+
+.tutorial-content .options {
+    width: 400px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tutorial-content .options li {
+    color: #4A4A4A;
+    font-size: 18px;
+    padding: 20px 35px;
+    cursor: pointer;
+    line-height: 20px;
+}
+
+.tutorial-content .options li strong {
+    font-weight: bold;
+    display: block;
+    color: #f9634e;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+.tutorial-content .options li.active {
+    color: #fff;
+    background: #f9634e;
+}
+
+.tutorial-content .options li.active strong {
+    color: #fff;
+}
+
+.tutorial-content .content {
+    flex: 1;
+    border-left: 1px solid #DCDCDC;
+    margin-left: 15px;
+    padding: 10px;
+}
+
+.tutorial {
+    font-size: 18px;
+    line-height: 29px;
+    padding: 10px 30px;
+    color: #4A4A4A;
+}
+
+.tutorial ol li {
+    padding-bottom: 10px;
+}
+
+.tutorial-footer {
+   text-align: center;
+    padding: 55px 35px;
+}

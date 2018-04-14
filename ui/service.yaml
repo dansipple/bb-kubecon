@@ -1,0 +1,24 @@
+{% set sanitized_branch = (branch or "dev").replace('/', '-') %}
+
+name: ui
+namespace: datawire
+
+profiles:
+  stable:
+    endpoint: /
+    max_memory: 0.7G
+    max_cpu: 0.5
+  canary:
+    endpoint: /
+    weight: 10 # percentage of traffic to route to this class of deployment
+    max_memory: 0.7G
+    max_cpu: 0.5
+  default:  # development profile
+    name: {{sanitized_branch}}
+    endpoint: {{sanitized_branch}}
+    max_memory: 0.7G
+    max_cpu: 0.5
+
+branches:
+  master: stable
+  dev/*: default
