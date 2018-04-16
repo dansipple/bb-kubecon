@@ -11,8 +11,9 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 quote = { 'author': 'Albert Einstein', 'created_at': '2012-04-05', 'text': 'Imagine is more important than knowledge.'}
+quote2 = { 'author': 'Albert Einstein', 'created_at': '2012-04-05', 'text': 'Imagine is more important than knowledgs.'}
 
-tweets = { 'tweet': quote }
+tweets = [quote, quote2]
 
 @app.route('/get-quotes')
 def get_quotes():
