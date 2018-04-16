@@ -12,6 +12,7 @@ This will start on 8080. You can test it out by doing:
 
 which should return some JSON:
 
+```
 [
   {
     "author": "Albert Einstein",
@@ -24,5 +25,6 @@ which should return some JSON:
     "text": "Imagine is more important than knowledgs."
   }
 ]
+```
 
 This represents two tweets.
