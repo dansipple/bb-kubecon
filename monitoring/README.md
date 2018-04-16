@@ -37,8 +37,10 @@ To set this up:
 JSON blob
 
 {
-  author: "Albert Einstein",
-  created_at: "Thu Apr 06 15:24:15 +0000 2017",
-  text: "Imagination is more important than knowledge."
+  tweet: {
+    author: "Albert Einstein",
+    created_at: "Thu Apr 06 15:24:15 +0000 2017",
+    text: "Imagination is more important than knowledge."
+  }
 }
 
