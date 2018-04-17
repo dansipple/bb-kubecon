@@ -5,17 +5,17 @@ namespace: datawire
 
 profiles:
   stable:
-    endpoint: /python-api
+    endpoint: /python-api/
     max_memory: 0.1G
     max_cpu: 0.1
   canary:
-    endpoint: /python-api
+    endpoint: /python-api/
     weight: 50 # percentage of traffic to route to this class of deployment
     max_memory: 0.1G
     max_cpu: 0.1
   default:
     name: {{sanitized_branch}}
-    endpoint: /{{sanitized_branch}}/python-api
+    endpoint: /{{sanitized_branch}}/python-api/
     max_memory: 0.1G
     max_cpu: 0.1
 
