@@ -1,5 +1,15 @@
-name: tweeter
+name: stream
 namespace: datawire
+
+profiles:
+  stable:
+    endpoint: /stream/
+    max_memory: 0.1G
+    max_cpu: 0.1
+  default:
+    endpoint: /stream/
+    max_memory: 0.1G
+    max_cpu: 0.1
 
 branches:
   master: stable

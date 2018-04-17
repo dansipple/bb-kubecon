@@ -15,7 +15,7 @@ quote2 = { 'author': 'Albert Einstein', 'created_at': '2012-04-05', 'text': 'Ima
 
 tweets = [quote, quote2]
 
-@app.route('/get-quotes')
+@app.route('/get-quotes/')
 def get_quotes():
     return jsonify(tweets)
 

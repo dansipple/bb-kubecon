@@ -9,19 +9,6 @@ kind: Service
 metadata:
   name: {{build.name}}
   namespace: {{service.namespace}}
-  {%- if "endpoint" in build.profile %}
-  annotations:
-    getambassador.io/config: |
-      ---
-      apiVersion: ambassador/v0
-      kind: Mapping
-      name: {{build.name}}-mapping
-      prefix: {{build.profile.endpoint}}
-      service: {{build.name}}.{{service.namespace}}.svc.cluster.local
-      {%- if "weight" in build.profile %}
-      weight: {{build.profile.weight}}
-      {%- endif %}
-  {%- endif %}
 spec:
   selector:
     app: {{build.name}}
