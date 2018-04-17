@@ -17,13 +17,18 @@ metadata:
       kind: Mapping
       name: {{build.name}}-mapping
       prefix: {{build.profile.endpoint}}
+      {%- if "shadow" in build.profile %}
+      shadow: {{build.profile.shadow}}.{{service.namespace}}.svc.cluster.local
+      {%- else %}
       service: {{build.name}}.{{service.namespace}}.svc.cluster.local
+      {%- endif %}
       {%- if "weight" in build.profile %}
       weight: {{build.profile.weight}}
       {%- endif %}
   {%- endif %}
 spec:
   selector:
+
     app: {{build.name}}
   ports:
     - port: 80
