@@ -16,14 +16,14 @@ which should return some JSON:
 [
   {
     "author": "Albert Einstein",
-    "created_at": "2012-04-05",
-    "text": "Imagine is more important than knowledge."
-  },
+    "text": "Imagine is more important than knowledge.",
+    "created_at": "2018-04-18T08:53:38.755218"
+  }
   {
     "author": "Albert Einstein",
-    "created_at": "2012-04-05",
-    "text": "Imagine is more important than knowledgs."
-  }
+    "text": "Imagine is more important than knowledge.",
+    "created_at": "2018-04-18T08:53:38.755218"
+}
 ]
 ```
 
