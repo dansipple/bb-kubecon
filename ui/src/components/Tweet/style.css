@@ -1,0 +1,45 @@
+.Tweet {
+    min-width: 500px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    padding: 25px;
+    margin: 0 20px 20px 0;
+    min-height: 120px;
+}
+
+.Tweet .top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.Tweet .top .author {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.Tweet .top .time {
+    margin-left: 5px;
+    color: #657786;
+    font-weight: 300;
+}
+
+.Tweet .body {
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 15px;
+}
+
+.Tweet .actions {
+    color: #657786;
+    display: flex;
+    align-items: center;
+    padding: 5px 5px 0;
+}
+
+.Tweet .actions > i {
+    margin-right: 15px;
+    font-size: 20px;
+}

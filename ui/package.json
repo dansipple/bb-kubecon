@@ -3,11 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "moment": "^2.22.1",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
-    "react-joyride": "^1.11.1",
     "react-scripts": "1.0.17",
-    "react-slick": "^0.16.0",
     "recharts": "1.0.0-beta.6",
     "semantic-ui-css": "2.2.12",
     "semantic-ui-react": "0.77.0"

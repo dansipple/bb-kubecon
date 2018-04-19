@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: 'Source Sans Pro', sans-serif;
@@ -156,64 +160,6 @@ a:hover {
     width: 83px;
     display: block;
     margin-right: 10px;
-}
-
-.joyride-tooltip {
-    color: #4A4A4A;
-}
-
-.joyride-tooltip__button--primary {
-    padding: 10px 30px;
-    font-size: 18px;
-    font-weight: 500;
-    background: #62c2d7;
-    color: #fff;
-}
-
-.joyride-tooltip__button--primary:active, .joyride-tooltip__button--primary:focus, .joyride-tooltip__button--primary:hover {
-    background: #62c2d7;
-    opacity: 0.9;
-}
-
-.joyride-tooltip__button--secondary {
-    color: #4A4A4A;
-}
-
-.joyride-tooltip__header ~ .joyride-tooltip__main {
-    color: #4A4A4A;
-    font-size: 18px;
-    padding: 20px 0 25px;
-    line-height: 25px;
-}
-
-.joyride-tooltip__header {
-    border-bottom: 1px solid #DCDCDC;
-    color: #222222;
-    font-size: 28px;
-    line-height: 35px;
-    font-weight: 600;
-    padding-bottom: 15px;
-}
-
-.joyride-beacon__outer {
-    border-color: #F9634E;
-}
-
-.joyride-beacon__inner {
-    background: #F9634E;
-}
-
-.joyride-tooltip__close--header {
-    height: 17px;
-    width: 17px;
-}
-
-.joyride-hole {
-    box-shadow: 0 0 0 9999px rgba(66, 66, 66, 0.3), 0 0 15px rgba(66, 66, 66, 0.3);
-}
-
-.joyride-tooltip {
-    filter: drop-shadow(-1px -2px 3px rgba(0, 0, 0, 0.1)) drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.1))
 }
 
 .ui.dimmer {
