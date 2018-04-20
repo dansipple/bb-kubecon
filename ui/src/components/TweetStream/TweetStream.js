@@ -10,7 +10,7 @@ class TweetStream extends Component {
 
   componentDidMount() {
     this.active = true;
-    //this.fetchTweets();
+    this.fetchTweets();
   }
 
   componentWillUnmount() {
