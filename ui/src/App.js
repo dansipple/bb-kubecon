@@ -30,9 +30,9 @@ class App extends Component {
             <a href="/" className="env active">Prod</a>
           </div>
           <div className="pollers">
-            <Poller endpoint="python-api"/>
-            <Poller endpoint="java-spring-api"/>
-            <Poller endpoint="nodejs-api"/>
+            <Poller endpoint="python-api/"/>
+            <Poller endpoint="java-spring-api/"/>
+            <Poller endpoint="nodejs-api/"/>
           </div>
         </div>
         <h4 className="label">Tweets</h4>
