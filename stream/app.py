@@ -20,13 +20,14 @@ def get_quotes():
     c.execute('select author, created_at, text from tweets order by random() limit 5')
     rows = c.fetchall()
     
-    tweet = { }
     tweets = [ ]
 
     for row in rows:
+        tweet = { }
         tweet['author'] = row[0]
         tweet['created_at'] = row[1]
         tweet['text'] = row[2]
+        print(tweet)
         tweets.append(tweet)
 
     return jsonify(tweets)
