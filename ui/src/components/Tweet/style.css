@@ -1,5 +1,6 @@
 .Tweet {
     min-width: 500px;
+    max-width: 500px; /* Needed for tweet to take up 50% of flexbox container */
     background: white;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     padding: 25px;
