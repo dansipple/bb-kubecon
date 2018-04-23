@@ -35,7 +35,7 @@ class App extends Component {
             <Poller endpoint="nodejs-api/"/>
           </div>
         </div>
-        <h4 className="label">Tweets</h4>
+        <h4 className="label">Trending Tweets</h4>
         <TweetStream />
       </div>
     </div>);

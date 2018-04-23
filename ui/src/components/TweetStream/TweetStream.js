@@ -23,7 +23,7 @@ class TweetStream extends Component {
       .then((tweets) => {
         this.setState({ tweets });
         if (this.active) {
-          setTimeout(() => this.fetchTweets(), 1000);
+          setTimeout(() => this.fetchTweets(), 3000);
         }
       }).catch(err => console.log(err));
   }
