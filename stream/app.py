@@ -17,7 +17,7 @@ def get_quotes():
     conn = sqlite3.connect('tweet.db')
     c = conn.cursor()
 
-    c.execute('select author, created_at, text from tweets order by random() limit 5')
+    c.execute('select author, created_at, text from tweets order by random() limit 4')
     rows = c.fetchall()
     
     tweets = [ ]
@@ -52,6 +52,10 @@ def add_quotes():
     conn.close()
 
     return "Received"
+
+def gdpr_filter(tweet):
+    tweet['author'] = 'Anonymous'
+    return tweet
 
 def init():
     conn = sqlite3.connect('tweet.db')
