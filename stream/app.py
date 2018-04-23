@@ -17,7 +17,7 @@ def get_quotes():
     conn = sqlite3.connect('tweet.db')
     c = conn.cursor()
 
-    c.execute('select author, created_at, text from tweets order by random() limit 4')
+    c.execute('select author, created_at, text from tweets order by created_at desc limit 4')
     rows = c.fetchall()
     
     tweets = [ ]
