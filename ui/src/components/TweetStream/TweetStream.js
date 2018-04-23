@@ -21,7 +21,9 @@ class TweetStream extends Component {
     fetch('/stream/get-quotes/', { credentials: 'same-origin' })
       .then(response => response.json())
       .then((tweets) => {
-        this.setState({ tweets });
+        this.setState({
+          tweets: this.state.tweets.concat(tweets)
+        });
         if (this.active) {
           setTimeout(() => this.fetchTweets(), 3000);
         }
