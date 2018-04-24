@@ -1,3 +1,5 @@
+{% set sanitized_branch = (branch or "dev").replace('/', '-') %}
+
 name: stream
 namespace: datawire
 
@@ -7,15 +9,21 @@ profiles:
     max_memory: 0.1G
     max_cpu: 0.1
   default:
+    name: {{sanitized_branch}}
+    endpoint: {{sanitized_branch}}/stream/
+    max_memory: 0.1G
+    max_cpu: 0.1
+  canary:
     endpoint: /stream/
     max_memory: 0.1G
     max_cpu: 0.1
+    weight: 50
   shadow:
     endpoint: /stream/
-    shadow: stream-shadow
     max_memory: 0.1G
     max_cpu: 0.1
-    
+    shadow: true
+
 branches:
   master: stable
   dev/*: default

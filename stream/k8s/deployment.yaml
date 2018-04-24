@@ -17,10 +17,9 @@ metadata:
       kind: Mapping
       name: {{build.name}}-mapping
       prefix: {{build.profile.endpoint}}
-      {%- if "shadow" in build.profile %}
-      shadow: {{build.profile.shadow}}.{{service.namespace}}.svc.cluster.local
-      {%- else %}
       service: {{build.name}}.{{service.namespace}}.svc.cluster.local
+      {%- if "shadow" in build.profile %}
+      shadow: true
       {%- endif %}
       {%- if "weight" in build.profile %}
       weight: {{build.profile.weight}}
