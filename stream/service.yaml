@@ -10,7 +10,7 @@ profiles:
     max_cpu: 0.1
   default:
     name: {{sanitized_branch}}
-    endpoint: {{sanitized_branch}}/stream/
+    endpoint: /{{sanitized_branch}}/stream/
     max_memory: 0.1G
     max_cpu: 0.1
   canary:
