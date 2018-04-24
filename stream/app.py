@@ -5,6 +5,7 @@ import datetime
 import json
 import sqlite3
 import os
+import logging
 
 from flask import Flask, request, jsonify
 
@@ -27,7 +28,6 @@ def get_quotes():
         tweet['author'] = row[0]
         tweet['created_at'] = row[1]
         tweet['text'] = row[2]
-        print(tweet)
         tweets.append(tweet)
 
     return jsonify(tweets)
@@ -35,6 +35,7 @@ def get_quotes():
 @app.route('/add-quotes/', methods=['POST'])
 def add_quotes():
     tweet = request.get_json()
+    tweet = gdpr_filter(tweet)
 
     if os.path.exists('tweet.db')==False:
         init()
@@ -47,8 +48,8 @@ def add_quotes():
     c = conn.cursor()
     c.execute('INSERT INTO tweets VALUES(?, ?, ?)',
              (author, created_at, quote))
-    print('saved tweet', tweet)
     conn.commit()
+    logging.info('Saved tweet', tweet)
     conn.close()
 
     return "Received"

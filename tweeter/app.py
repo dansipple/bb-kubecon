@@ -8,7 +8,7 @@ import datetime
 # Infinite loop; we can use `kubectl scale` to turn this on and off
 
 url = 'http://35.195.162.45/stream/add-quotes/'
-# url = 'http://localhost:8080/add-quotes/'
+# url = 'http://localhost:8080/add-quotes/`
 
 def main():
 

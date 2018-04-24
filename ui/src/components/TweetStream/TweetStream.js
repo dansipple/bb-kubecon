@@ -18,7 +18,7 @@ class TweetStream extends Component {
   }
 
   fetchTweets() {
-    fetch('/stream/get-quotes/', { credentials: 'same-origin' })
+    fetch('stream/get-quotes/', { credentials: 'same-origin' })
       .then(response => response.json())
       .then((tweets) => {
         this.setState({ tweets });
