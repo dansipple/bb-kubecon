@@ -82,7 +82,7 @@ spec:
       serviceAccountName: ambassador
       containers:
       - name: ambassador
-        image: dwflynn/ambassador:0.31.0-shadowing
+        image: dwflynn/ambassador:0.31.0-shadowing2
         resources:
           limits:
             cpu: 1
