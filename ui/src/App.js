@@ -27,7 +27,6 @@ class App extends Component {
         <div className="module step1">
           <div className="module-header">
             <h1 className="text-left">Demo App</h1>
-            <a href="/" className="env active">Prod</a>
           </div>
           <div className="pollers">
             <Poller endpoint="python-api/"/>
