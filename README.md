@@ -1,83 +1,56 @@
 # Demo notes
 
-1
+1. General architecture overview (Ambassador, tweeter, stream).
+2. Create a sandbox for deployment.
+   * `git branch`, `forge deploy` from top level app directory
+   * Note: the tweeter doesn't go to the sandbox because it's development
+3. Now, let's make a change to streams to anonymize the data.
+   * We add the GDPR filter.
+   * The filter has a sleep to simulate latency, and it anonymizes names.
+4. We're going to test the change out by sending a curl with a tweet.
 
+   ```
+   curl -H "Content-Type: application/json" -d '{"author": "Albert Einstein", "created_at": "2018-05-25T07:06:34.127405", "text": "Genius."}' http://35.195.162.45/dev-rdl/stream/add-quotes/
+   ```
 
--> stream
-   -> stream-stable 
-   -> stream-dev (gdpr)
+   Note that the date is in the future so it shows up at the top of the trending tweets.
 
+5. Look at the UI, it works.
+6. So the change works with my test, but what about real production data? This is an important feature. We're going to deploy in shadow mode.
+   * `forge --profile shadow deploy`
+   * Two terminal windows:
+     * `stern stream-stable` and `stern stream-shadow`
+     * Note the anonymized data being logged
+7. Let's take a look at metrics.
+   * Grafana dashboard
+   * You might want to set to last 15 minutes (upper right hand side) and hit refresh as well.
+   * Oops, latency is high. We should fix that.
+8. Let's clean up the shadow first.
+   * `forge list`
+   * `forge delete stream shadow`
+9. Let's go back to our sandbox, and we also have a last minute feature request to only display 2 tweets.
+   * `telepresence --swap-deployment stream-dev-rdl --docker-run --rm -it -v $(pwd):/service stream-dev:latest`
+   * Let's change the SQL query from 4 to 2, and fix the sleep
 
+# Configuration notes
+
+The latency metrics used in the Grafana dashboard:
+
+```
+envoy_cluster_cluster_shadow_stream_shadow_datawire_svc_cluster_local_upstream_rq_time
+envoy_cluster_cluster_stream_stable_datawire_svc_cluster_local_upstream_rq_time
+```
+
+Prometheus is available at:
+
+```
+kubectl port-forward prometheus-prometheus-0 9090
+```
+
+You can scale the tweeter like so:
+
+```
 kubectl scale --replicas=0 deploy/tweeter-stable
+```
 
-1. tweet -> ambassador -> stream
-
-
-
-2. create sandbox for development
-   * git branch
-   * forge deploy
-
-Note:
-* The tweets are being updated because it's in its own sandbox
-  No prod traffic
-
-
-3. now, let's make a change to streams
-   * anonymize the data
-   * make change
-   * deploy
-4. test in my sandbox with: (note that the date is in the future to insure it shows up)
-
-curl -H "Content-Type: application/json" -d '{"author": "Albert Einstein", "created_at": "2018-05-25T07:06:34.127405", "text": "Genius."}' http://35.195.162.45/dev-rdl/stream/add-quotes/
-
-   * look at the UI
-5. OK, that works great, but what about real data?
-   * forge deploy --shadow
-
-stern to watch the logs; looks good
-
-6. let's also look at metrics to see if it's impacted performance
-
-7. let me clean up
-   * forge list --> this gives you tracability
-   * forge delete stream shadow
-
-8. OK, I want to roll this into production ... but last minute request! We want to only display 2 tweets instead of 4.
-
-9. Let's do some coding in our sandbox. Instead of just doing the deploy though, we're going to do some real-time coding.
-   * telepresence --run-container 
-
-7. now, change in requirements
-   * telepresence
-8. metrics/grafana
-
-
-Things that shouldn't be part of the app:
-
-* Ambassador
-* GDPR
-* Tweeter
-* Monitoring
-
-
-
-
-
-
-
-
-* writing a new service that processes the data stream (e.g., GDPR, analytics)
-* updating a service (refactoring) -- change the data storage architecture
-  * in both of these cases, you want to test correctness, not just a failure
-
-* so we update a service and change from sqlite to cloud SQL
-  * then we can query the databases and do a diff to make sure it's the same
-* we want to update the service and add IP address?
-
-* what are the use cases for diffy?
-
-
-## Questions?
-
-Join our [Gitter chat](https://gitter.im/datawire/users) or email hello@datawire.io.
+The tweeter, Ambassador, and monitoring directories are *not* deployed by default when creating a sandbox. 
