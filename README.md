@@ -10,7 +10,6 @@
 
 kubectl scale --replicas=0 deploy/tweeter-stable
 
-
 1. tweet -> ambassador -> stream
 
 
