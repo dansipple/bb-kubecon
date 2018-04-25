@@ -6,6 +6,7 @@ import json
 import sqlite3
 import os
 import logging
+import sys
 
 from flask import Flask, request, jsonify
 
@@ -50,7 +51,7 @@ def add_quotes():
     c.execute('INSERT INTO tweets VALUES(?, ?, ?)',
              (author, created_at, quote))
     conn.commit()
-    logging.info('Saved tweet', tweet)
+    logging.info('%s %s', 'Saved tweet', tweet)
     conn.close()
 
     return "Received"
@@ -67,4 +68,5 @@ def init():
     conn.close()
 
 if __name__ == "__main__":
+    logging.basicConfig(stream=sys.stdout, level=logging.INFO)
     app.run(debug=True, host="0.0.0.0", port=8080)
