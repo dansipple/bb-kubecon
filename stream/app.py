@@ -35,7 +35,8 @@ def get_quotes():
 @app.route('/add-quotes/', methods=['POST'])
 def add_quotes():
     tweet = request.get_json()
-    tweet = gdpr_filter(tweet)
+    # tweet = gdpr_filter(tweet)
+    
 
     if os.path.exists('tweet.db')==False:
         init()
@@ -56,6 +57,7 @@ def add_quotes():
 
 def gdpr_filter(tweet):
     tweet['author'] = 'Anonymous'
+    time.sleep(0.5)
     return tweet
 
 def init():
