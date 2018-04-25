@@ -10,13 +10,11 @@
 
 kubectl scale --replicas=0 deploy/tweeter-stable
 
-* don't redeploy ambassador
-* graphic with the architecture
-   * explain the concept of shadowing
-
-* take out the demo services
 
 1. tweet -> ambassador -> stream
+
+
+
 2. create sandbox for development
    * git branch
    * forge deploy
