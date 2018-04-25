@@ -7,11 +7,11 @@ metadata:
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{build.name}}
+  name: tweeter-stable
   namespace: {{service.namespace}}
 spec:
   selector:
-    app: {{build.name}}
+    app: tweeter-stable
   ports:
     - port: 80
       targetPort: http-api
@@ -20,7 +20,7 @@ spec:
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: {{build.name}}
+  name: tweeter-stable
   namespace: {{service.namespace}}
 spec:
   replicas: 1
@@ -29,10 +29,10 @@ spec:
   template:
     metadata:
       labels:
-        app: {{build.name}}
+        app: tweeter-stable
     spec:
       containers:
-      - name: {{build.name}}
+      - name: tweeter-stable
         env:
         - name: BUILD_PROFILE
           value: {{build.profile.name}}

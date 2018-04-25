@@ -7,6 +7,7 @@ import sqlite3
 import os
 import logging
 import sys
+import time
 
 from flask import Flask, request, jsonify
 
@@ -37,7 +38,6 @@ def get_quotes():
 def add_quotes():
     tweet = request.get_json()
     # tweet = gdpr_filter(tweet)
-    
 
     if os.path.exists('tweet.db')==False:
         init()
