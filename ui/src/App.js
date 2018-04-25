@@ -23,16 +23,8 @@ class App extends Component {
         </div>
       </div>
       <div className="container">
-        <h4 className="label">Demo Microservices</h4>
+        <h4 className="label">Architecture</h4>
         <div className="module step1">
-          <div className="module-header">
-            <h1 className="text-left">Demo App</h1>
-          </div>
-          <div className="pollers">
-            <Poller endpoint="python-api/"/>
-            <Poller endpoint="java-spring-api/"/>
-            <Poller endpoint="nodejs-api/"/>
-          </div>
         </div>
         <h4 className="label">Trending Tweets</h4>
         <TweetStream />
