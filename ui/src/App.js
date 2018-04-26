@@ -7,6 +7,7 @@ import Poller from './components/Poller';
 import TweetStream from './components/TweetStream';
 
 import blackbirdLogo from './images/blackbird-logo.svg';
+import archImage from './images/arch-diagram.png';
 
 class App extends Component {
   render() {
@@ -24,8 +25,7 @@ class App extends Component {
       </div>
       <div className="container">
         <h4 className="label">Architecture</h4>
-        <div className="module step1">
-        </div>
+           <img alt="architecture" src={archImage} />
         <h4 className="label">Trending Tweets</h4>
         <TweetStream />
       </div>
