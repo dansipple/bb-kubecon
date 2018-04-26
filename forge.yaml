@@ -1,0 +1,4 @@
+registry:
+  type: gcr
+  url: eu.gcr.io
+  project: datawireio
