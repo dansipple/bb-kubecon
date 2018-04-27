@@ -36,7 +36,7 @@ class TweetStream extends Component {
   render() {
     return (
       <div className="TweetStream">
-        { this.state.tweets.map(tweet => <Tweet tweet={tweet}/>) }
+        { this.state.tweets.map((tweet, i) => <Tweet key={i.toString()} tweet={tweet}/>) }
       </div>
     );
   }
